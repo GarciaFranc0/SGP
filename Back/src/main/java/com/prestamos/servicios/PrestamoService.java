@@ -1,18 +1,22 @@
 package com.prestamos.servicios;
 
 import com.prestamos.modelos.Cliente;
+import com.prestamos.modelos.Cuota;
 import com.prestamos.modelos.Pago;
 import com.prestamos.modelos.Prestamo;
+import com.prestamos.modelosEnum.EstadoCuota;
 import com.prestamos.modelosEnum.EstadoPrestamo;
 import com.prestamos.modelosEnum.FrecuenciaPago;
 import com.prestamos.modelosEnum.TipoPago;
 import com.prestamos.repositorios.ClienteRepository;
 import com.prestamos.repositorios.PagoRepository;
 import com.prestamos.repositorios.PrestamoRepository;
+import com.prestamos.repositorios.CuotaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -22,11 +26,13 @@ public class PrestamoService {
     private final PrestamoRepository prestamoRepository;
     private final ClienteRepository clienteRepository;
     private final PagoRepository pagoRepository;
+    private final CuotaRepository cuotaRepository;
 
-    public PrestamoService(PrestamoRepository prestamoRepository, ClienteRepository clienteRepository, PagoRepository pagoRepository) {
+    public PrestamoService(PrestamoRepository prestamoRepository, ClienteRepository clienteRepository, PagoRepository pagoRepository, CuotaRepository cuotaRepository) {
         this.prestamoRepository = prestamoRepository;
         this.clienteRepository = clienteRepository;
         this.pagoRepository = pagoRepository;
+        this.cuotaRepository = cuotaRepository;
     }
 
     @Transactional
@@ -106,4 +112,36 @@ public class PrestamoService {
         };
         return nuevaFecha;
     }
+
+    private void generarCronogramaCuotas(Prestamo prestamo, int cantidadCuotas, BigDecimal tasaInteres, FrecuenciaPago frecuencia, LocalDate fechaPrimerVencimiento) {
+    BigDecimal interesTotal = prestamo.getMontoCapital().multiply(tasaInteres).divide(new BigDecimal("100"));
+    BigDecimal montoTotal = prestamo.getMontoCapital().add(interesTotal);
+
+    BigDecimal montoPorCuota = montoTotal.divide(new BigDecimal(cantidadCuotas), 2, java.math.RoundingMode.HALF_UP);
+
+    LocalDate fechaCuota = fechaPrimerVencimiento;
+
+    for (int i = 1; i <= cantidadCuotas; i++) {
+        Cuota cuota = new Cuota();
+        cuota.setPrestamistaId(prestamo.getPrestamistaId());
+        cuota.setPrestamo(prestamo);
+        cuota.setNumeroCuota(i);
+        cuota.setMontoCuota(montoPorCuota);
+        cuota.setFechaVencimiento(fechaCuota);
+        cuota.setEstado(EstadoCuota.PENDIENTE);
+
+        cuotaRepository.save(cuota);
+
+        if (frecuencia == FrecuenciaPago.DIARIO) {
+            fechaCuota = fechaCuota.plusDays(1);
+        } else if (frecuencia == FrecuenciaPago.SEMANAL) {
+            fechaCuota = fechaCuota.plusWeeks(1);
+        } else if (frecuencia == FrecuenciaPago.QUINCENAL) {
+            fechaCuota = fechaCuota.plusDays(15);
+        } else if (frecuencia == FrecuenciaPago.MENSUAL) {
+            fechaCuota = fechaCuota.plusMonths(1);
+        }
+    }
+    }
+
 }
