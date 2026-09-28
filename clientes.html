@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prestamos - Clientes</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+    <div class="app">
+
+
+        <!-- BARRA LATERAL -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h1>PRESTAMOS</h1>
+
+                <p>Gestión financiera</p>
+
+            </div>
+
+
+            <nav class="menu">
+
+                <a href="../index.html" class="menu-item">
+                    Dashboard
+                </a>
+
+                <a href="clientes.html" class="menu-item activo">
+                    Clientes
+                </a>
+
+                <a href="#" class="menu-item">
+                    Préstamos
+                </a>
+
+                <a href="#" class="menu-item">
+                    Pagos
+                </a>
+
+                <a href="#" class="menu-item">
+                    Reportes
+                </a>
+
+                <a href="#" class="menu-item">
+                    Configuración
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- CONTENIDO PRINCIPAL -->
+
+        <main class="main">
+
+
+            <!-- HEADER -->
+
+            <header class="header">
+
+                <div>
+
+                    <h2>Clientes</h2>
+
+                    <p>
+                        Administrá los clientes registrados
+                    </p>
+
+                </div>
+
+
+                <div class="usuario">
+
+                    <span>Prestamista</span>
+
+                </div>
+
+            </header>
+
+
+            <!-- CONTENIDO -->
+
+            <section class="contenido">
+
+
+                <!-- ENCABEZADO DE CLIENTES -->
+
+                <div class="pagina-header">
+
+                    <div>
+
+                        <h3>Lista de clientes</h3>
+
+                        <p>
+                            Clientes registrados en el sistema
+                        </p>
+
+                    </div>
+
+
+                    <button id="btnNuevoCliente">
+
+                        + Nuevo cliente
+
+                    </button>
+
+                </div>
+
+
+                <!-- BUSCADOR -->
+
+                <div class="buscador">
+
+                    <input
+                        type="text"
+                        id="buscarCliente"
+                        placeholder="Buscar por nombre, DNI o teléfono..."
+                    >
+
+                </div>
+
+
+                <!-- TABLA -->
+
+                <div class="seccion">
+
+                    <div class="tabla-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Nombre</th>
+
+                                    <th>DNI</th>
+
+                                    <th>Teléfono</th>
+
+                                    <th>Dirección</th>
+
+                                    <th>Estado</th>
+
+                                    <th>Acciones</th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="tablaClientes">
+
+                                <tr>
+
+                                    <td>Juan Pérez</td>
+
+                                    <td>40.123.456</td>
+
+                                    <td>11-5555-1234</td>
+
+                                    <td>Av. Corrientes 1234</td>
+
+                                    <td>
+
+                                        <span class="estado activo">
+                                            Activo
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <button class="btn-tabla">
+                                            Ver
+                                        </button>
+
+                                        <button class="btn-tabla">
+                                            Editar
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>Carlos Gómez</td>
+
+                                    <td>38.654.321</td>
+
+                                    <td>11-4444-5678</td>
+
+                                    <td>Av. Rivadavia 2450</td>
+
+                                    <td>
+
+                                        <span class="estado activo">
+                                            Activo
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <button class="btn-tabla">
+                                            Ver
+                                        </button>
+
+                                        <button class="btn-tabla">
+                                            Editar
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>María López</td>
+
+                                    <td>42.987.654</td>
+
+                                    <td>11-3333-7890</td>
+
+                                    <td>Av. Santa Fe 850</td>
+
+                                    <td>
+
+                                        <span class="estado bloqueado">
+                                            Bloqueado
+                                        </span>
+
+                                    </td>
+
+                                    <td>
+
+                                        <button class="btn-tabla">
+                                            Ver
+                                        </button>
+
+                                        <button class="btn-tabla">
+                                            Editar
+                                        </button>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+    </div>
+
+
+    <script src="../app.js"></script>
+
+</body>
+
+</html>
