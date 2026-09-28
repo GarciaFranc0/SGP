@@ -55,8 +55,7 @@ public class PrestamoService {
 
     @Transactional
     public Pago renovarPrestamo(Long prestamoId, Long prestamistaId, BigDecimal montoAbonado) {
-        Prestamo prestamo = prestamoRepository.findByIdAndPrestamistaId(prestamoId, prestamistaId)
-                .orElseThrow(() -> new RuntimeException("Préstamo no encontrado"));
+        Prestamo prestamo = prestamoRepository.findByIdAndPrestamistaId(prestamoId, prestamistaId).orElseThrow(() -> new RuntimeException("Préstamo no encontrado"));
 
         prestamo.setFechaVencimiento(calcularProximoVencimiento(prestamo.getFechaVencimiento(), prestamo.getFrecuencia()));
         prestamo.setCantidadRenovaciones(prestamo.getCantidadRenovaciones() + 1);
@@ -77,8 +76,7 @@ public class PrestamoService {
 
     @Transactional
     public Pago cancelarPrestamoTotal(Long prestamoId, Long prestamistaId, BigDecimal montoAbonado) {
-        Prestamo prestamo = prestamoRepository.findByIdAndPrestamistaId(prestamoId, prestamistaId)
-                .orElseThrow(() -> new RuntimeException("Préstamo no encontrado"));
+        Prestamo prestamo = prestamoRepository.findByIdAndPrestamistaId(prestamoId, prestamistaId).orElseThrow(() -> new RuntimeException("Préstamo no encontrado"));
 
         prestamo.setEstado(EstadoPrestamo.CANCELADO);
         prestamoRepository.save(prestamo);
