@@ -95,6 +95,153 @@
             <!-- CONTENIDO -->
 
             <section class="contenido">
+                <!-- FORMULARIO NUEVO CLIENTE -->
+
+<div class="formulario-container" id="formularioCliente">
+
+    <div class="formulario-header">
+
+        <div>
+            <h3>Nuevo cliente</h3>
+
+            <p>
+                Completá los datos del cliente
+            </p>
+        </div>
+
+    </div>
+
+
+    <form id="formCliente">
+
+        <div class="form-grid">
+
+
+            <!-- NOMBRE -->
+
+            <div class="campo">
+
+                <label for="nombre">
+                    Nombre completo
+                </label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Ej: Juan Pérez"
+                    required
+                >
+
+            </div>
+
+
+            <!-- DNI -->
+
+            <div class="campo">
+
+                <label for="dni">
+                    DNI
+                </label>
+
+                <input
+                    type="text"
+                    id="dni"
+                    placeholder="Ej: 40123456"
+                    required
+                >
+
+            </div>
+
+
+            <!-- TELEFONO -->
+
+            <div class="campo">
+
+                <label for="telefono">
+                    Teléfono
+                </label>
+
+                <input
+                    type="text"
+                    id="telefono"
+                    placeholder="Ej: 11-5555-1234"
+                    required
+                >
+
+            </div>
+
+
+            <!-- DIRECCION -->
+
+            <div class="campo">
+
+                <label for="direccion">
+                    Dirección
+                </label>
+
+                <input
+                    type="text"
+                    id="direccion"
+                    placeholder="Ej: Av. Corrientes 1234"
+                >
+
+            </div>
+
+
+            <!-- ESTADO -->
+
+            <div class="campo">
+
+                <label for="estado">
+                    Estado
+                </label>
+
+                <select id="estado">
+
+                    <option value="ACTIVO">
+                        Activo
+                    </option>
+
+                    <option value="BLOQUEADO">
+                        Bloqueado
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- BOTONES -->
+
+        <div class="formulario-botones">
+
+            <button
+                type="button"
+                id="btnCancelarCliente"
+                class="btn-cancelar"
+            >
+                Cancelar
+            </button>
+
+            <button
+                type="submit"
+                class="btn-guardar"
+            >
+                Guardar cliente
+            </button>
+
+        </div>
+
+
+    </form>
+
+</div>
+
+                
+                
 
 
                 <!-- ENCABEZADO DE CLIENTES -->
@@ -280,6 +427,12 @@
 
     </div>
 
+
+    <script src="../app.js"></script>
+
+</body>
+
+</html>
 
     <script src="../app.js"></script>
 
