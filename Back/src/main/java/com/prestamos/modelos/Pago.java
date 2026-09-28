@@ -1,5 +1,6 @@
 package com.prestamos.modelos;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.prestamos.modelosEnum.TipoPago;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -21,6 +22,7 @@ public class Pago {
     @Column(name = "prestamista_id", nullable = false)
     private Long prestamistaId;
 
+    @JsonIgnore 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "prestamo_id", nullable = false)
     private Prestamo prestamo;
