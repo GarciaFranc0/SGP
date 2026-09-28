@@ -55,9 +55,7 @@ public class Prestamo {
     public Prestamo() {
     }
 
-    public Prestamo(Long prestamistaId, Cliente cliente, BigDecimal montoCapital, BigDecimal porcentajeRecargo, 
-                    BigDecimal montoTotalActual, FrecuenciaPago frecuencia, LocalDateTime fechaInicio, 
-                    LocalDateTime fechaVencimiento, Integer cantidadRenovaciones, EstadoPrestamo estado) {
+    public Prestamo(Long prestamistaId, Cliente cliente, BigDecimal montoCapital, BigDecimal porcentajeRecargo, BigDecimal montoTotalActual, FrecuenciaPago frecuencia, LocalDateTime fechaInicio, LocalDateTime fechaVencimiento, Integer cantidadRenovaciones, EstadoPrestamo estado) {
         this.prestamistaId = prestamistaId;
         this.cliente = cliente;
         this.montoCapital = montoCapital;

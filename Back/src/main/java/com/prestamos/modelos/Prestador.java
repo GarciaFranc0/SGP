@@ -21,7 +21,7 @@ public class Prestador {
     private String email;
 
     @Column(name = "contrasena_hash", nullable = false)
-    private String contrasenaHash;
+    private String password;
 
     @Column(name = "moneda_pref")
     private String monedaPref;
@@ -32,10 +32,10 @@ public class Prestador {
     public Prestador() {
     }
 
-    public Prestador(String nombre, String email, String contrasenaHash, String monedaPref, String plantillaWhatsapp) {
+    public Prestador(String nombre, String email, String password, String monedaPref, String plantillaWhatsapp) {
         this.nombre = nombre;
         this.email = email;
-        this.contrasenaHash = contrasenaHash;
+        this.password = password;
         this.monedaPref = monedaPref;
         this.plantillaWhatsapp = plantillaWhatsapp;
     }
