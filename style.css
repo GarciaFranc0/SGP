@@ -298,3 +298,114 @@ td {
     }
 
 }
+
+
+/* ================================= */
+/* PAGINA CLIENTES */
+/* ================================= */
+
+.pagina-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+.pagina-header h3 {
+
+    font-size: 20px;
+
+}
+
+.pagina-header p {
+
+    margin-top: 5px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+/* BUSCADOR */
+
+.buscador {
+
+    background-color: white;
+
+    padding: 20px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.buscador input {
+
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    outline: none;
+
+}
+
+
+.buscador input:focus {
+
+    border-color: #2563eb;
+
+}
+
+
+/* BOTONES DE TABLA */
+
+.btn-tabla {
+
+    background-color: #f3f4f6;
+
+    color: #374151;
+
+    padding: 7px 10px;
+
+    margin-right: 5px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+}
+
+
+.btn-tabla:hover {
+
+    background-color: #e5e7eb;
+
+}
+
+
+/* ESTADO BLOQUEADO */
+
+.estado.bloqueado {
+
+    background-color: #e5e7eb;
+
+    color: #374151;
+
+}
