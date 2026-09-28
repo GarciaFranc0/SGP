@@ -409,3 +409,173 @@ td {
     color: #374151;
 
 }
+
+/* ================================= */
+/* FORMULARIO CLIENTE */
+/* ================================= */
+
+.formulario-container {
+
+    background-color: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 10px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.formulario-header {
+
+    margin-bottom: 25px;
+
+}
+
+
+.formulario-header h3 {
+
+    font-size: 20px;
+
+}
+
+
+.formulario-header p {
+
+    margin-top: 5px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+}
+
+
+/* GRID DEL FORMULARIO */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+
+}
+
+
+/* CAMPOS */
+
+.campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.campo label {
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    color: #374151;
+
+}
+
+
+.campo input,
+.campo select {
+
+    padding: 11px 12px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    outline: none;
+
+}
+
+
+.campo input:focus,
+.campo select:focus {
+
+    border-color: #2563eb;
+
+}
+
+
+/* BOTONES DEL FORMULARIO */
+
+.formulario-botones {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+.btn-cancelar {
+
+    background-color: #f3f4f6;
+
+    color: #374151;
+
+}
+
+
+.btn-cancelar:hover {
+
+    background-color: #e5e7eb;
+
+}
+
+
+.btn-guardar {
+
+    background-color: #2563eb;
+
+    color: white;
+
+}
+
+
+.btn-guardar:hover {
+
+    background-color: #1d4ed8;
+
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+.formulario-container {
+
+    display: none;
+
+}
