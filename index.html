@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +25,7 @@
 
             <nav class="menu">
 
-                <a href="#" class="menu-item activo">
+                <a href="index.html" class="menu-item activo">
                     Dashboard
                 </a>
 
@@ -31,7 +33,7 @@
                     Clientes
                 </a>
 
-                <a href="#" class="menu-item">
+                <a href="pages/prestamos.html" class="menu-item">
                     Préstamos
                 </a>
 
@@ -55,16 +57,21 @@
         <!-- CONTENIDO PRINCIPAL -->
         <main class="main">
 
-            <!-- ENCABEZADO -->
+            <!-- HEADER -->
             <header class="header">
 
                 <div>
                     <h2>Dashboard</h2>
-                    <p>Resumen general de tu actividad</p>
+
+                    <p>
+                        Resumen general de tu actividad
+                    </p>
                 </div>
 
                 <div class="usuario">
-                    <span>Prestamista</span>
+                    <span>
+                        Prestamista
+                    </span>
                 </div>
 
             </header>
@@ -72,36 +79,67 @@
 
             <!-- CONTENIDO -->
             <section class="contenido">
-                
 
                 <!-- TARJETAS -->
                 <div class="tarjetas">
 
                     <div class="tarjeta">
+
                         <p>Clientes</p>
-                        <h3 id="cantidadClientes">125</h3>
-                        <span>Clientes registrados</span>
+
+                        <h3 id="cantidadClientes">
+                            -
+                        </h3>
+
+                        <span>
+                            Clientes registrados
+                        </span>
+
                     </div>
 
 
                     <div class="tarjeta">
+
                         <p>Préstamos activos</p>
-                        <h3 id="prestamosActivos">87</h3>
-                        <span>Préstamos en curso</span>
+
+                        <h3 id="prestamosActivos">
+                            -
+                        </h3>
+
+                        <span>
+                            Préstamos en curso
+                        </span>
+
                     </div>
 
 
                     <div class="tarjeta">
+
                         <p>Dinero prestado</p>
-                        <h3 id="dineroPrestado">$2.450.000</h3>
-                        <span>Capital activo</span>
+
+                        <h3 id="dineroPrestado">
+                            -
+                        </h3>
+
+                        <span>
+                            Capital activo
+                        </span>
+
                     </div>
 
 
                     <div class="tarjeta">
+
                         <p>En mora</p>
-                        <h3 id="prestamosMora">12</h3>
-                        <span>Préstamos atrasados</span>
+
+                        <h3 id="prestamosMora">
+                            -
+                        </h3>
+
+                        <span>
+                            Préstamos atrasados
+                        </span>
+
                     </div>
 
                 </div>
@@ -111,14 +149,24 @@
                 <div class="seccion">
 
                     <div class="seccion-header">
+
                         <div>
-                            <h3>Próximos vencimientos</h3>
-                            <p>Préstamos próximos a vencer</p>
+
+                            <h3>
+                                Próximos vencimientos
+                            </h3>
+
+                            <p>
+                                Préstamos próximos a vencer
+                            </p>
+
                         </div>
+
 
                         <button id="verTodos">
                             Ver todos
                         </button>
+
                     </div>
 
 
@@ -127,47 +175,30 @@
                         <table>
 
                             <thead>
+
                                 <tr>
+
                                     <th>Cliente</th>
+
                                     <th>Monto</th>
+
                                     <th>Vencimiento</th>
+
                                     <th>Estado</th>
+
                                 </tr>
+
                             </thead>
+
 
                             <tbody id="tablaVencimientos">
 
                                 <tr>
-                                    <td>Juan Pérez</td>
-                                    <td>$25.000</td>
-                                    <td>28/09/2026</td>
-                                    <td>
-                                        <span class="estado activo">
-                                            Activo
-                                        </span>
-                                    </td>
-                                </tr>
 
-                                <tr>
-                                    <td>Carlos Gómez</td>
-                                    <td>$40.000</td>
-                                    <td>29/09/2026</td>
-                                    <td>
-                                        <span class="estado activo">
-                                            Activo
-                                        </span>
+                                    <td colspan="4">
+                                        Cargando información...
                                     </td>
-                                </tr>
 
-                                <tr>
-                                    <td>María López</td>
-                                    <td>$15.000</td>
-                                    <td>30/09/2026</td>
-                                    <td>
-                                        <span class="estado mora">
-                                            En mora
-                                        </span>
-                                    </td>
                                 </tr>
 
                             </tbody>
@@ -188,4 +219,6 @@
     <script src="app.js"></script>
 
 </body>
+
 </html>
+
