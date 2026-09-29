@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -42,7 +43,7 @@
                     Clientes
                 </a>
 
-                <a href="#" class="menu-item">
+                <a href="prestamos.html" class="menu-item">
                     Préstamos
                 </a>
 
@@ -95,153 +96,137 @@
             <!-- CONTENIDO -->
 
             <section class="contenido">
+
+
                 <!-- FORMULARIO NUEVO CLIENTE -->
 
-<div class="formulario-container" id="formularioCliente">
-
-    <div class="formulario-header">
-
-        <div>
-            <h3>Nuevo cliente</h3>
-
-            <p>
-                Completá los datos del cliente
-            </p>
-        </div>
-
-    </div>
-
-
-    <form id="formCliente">
-
-        <div class="form-grid">
-
-
-            <!-- NOMBRE -->
-
-            <div class="campo">
-
-                <label for="nombre">
-                    Nombre completo
-                </label>
-
-                <input
-                    type="text"
-                    id="nombre"
-                    placeholder="Ej: Juan Pérez"
-                    required
+                <div
+                    class="formulario-container"
+                    id="formularioCliente"
                 >
 
-            </div>
+                    <div class="formulario-header">
+
+                        <div>
+
+                            <h3 id="tituloFormulario">
+                                Nuevo cliente
+                            </h3>
+
+                            <p id="descripcionFormulario">
+                                Completá los datos del cliente
+                            </p>
+
+                        </div>
+
+                    </div>
 
 
-            <!-- DNI -->
+                    <form id="formCliente">
 
-            <div class="campo">
-
-                <label for="dni">
-                    DNI
-                </label>
-
-                <input
-                    type="text"
-                    id="dni"
-                    placeholder="Ej: 40123456"
-                    required
-                >
-
-            </div>
+                        <div class="form-grid">
 
 
-            <!-- TELEFONO -->
+                            <!-- NOMBRE -->
 
-            <div class="campo">
+                            <div class="campo">
 
-                <label for="telefono">
-                    Teléfono
-                </label>
+                                <label for="nombre">
+                                    Nombre completo
+                                </label>
 
-                <input
-                    type="text"
-                    id="telefono"
-                    placeholder="Ej: 11-5555-1234"
-                    required
-                >
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    placeholder="Ej: Juan Pérez"
+                                    required
+                                >
 
-            </div>
-
-
-            <!-- DIRECCION -->
-
-            <div class="campo">
-
-                <label for="direccion">
-                    Dirección
-                </label>
-
-                <input
-                    type="text"
-                    id="direccion"
-                    placeholder="Ej: Av. Corrientes 1234"
-                >
-
-            </div>
+                            </div>
 
 
-            <!-- ESTADO -->
+                            <!-- DNI -->
 
-            <div class="campo">
+                            <div class="campo">
 
-                <label for="estado">
-                    Estado
-                </label>
+                                <label for="dni">
+                                    DNI
+                                </label>
 
-                <select id="estado">
+                                <input
+                                    type="text"
+                                    id="dni"
+                                    placeholder="Ej: 40123456"
+                                    required
+                                >
 
-                    <option value="ACTIVO">
-                        Activo
-                    </option>
-
-                    <option value="BLOQUEADO">
-                        Bloqueado
-                    </option>
-
-                </select>
-
-            </div>
+                            </div>
 
 
-        </div>
+                            <!-- TELEFONO -->
+
+                            <div class="campo">
+
+                                <label for="telefono">
+                                    Teléfono
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="telefono"
+                                    placeholder="Ej: 11-5555-1234"
+                                    required
+                                >
+
+                            </div>
 
 
-        <!-- BOTONES -->
+                            <!-- DIRECCION -->
 
-        <div class="formulario-botones">
+                            <div class="campo">
 
-            <button
-                type="button"
-                id="btnCancelarCliente"
-                class="btn-cancelar"
-            >
-                Cancelar
-            </button>
+                                <label for="direccion">
+                                    Dirección
+                                </label>
 
-            <button
-                type="submit"
-                class="btn-guardar"
-            >
-                Guardar cliente
-            </button>
+                                <input
+                                    type="text"
+                                    id="direccion"
+                                    placeholder="Ej: Av. Corrientes 1234"
+                                >
 
-        </div>
+                            </div>
 
 
-    </form>
+                        </div>
 
-</div>
 
-                
-                
+                        <!-- BOTONES -->
+
+                        <div class="formulario-botones">
+
+                            <button
+                                type="button"
+                                id="btnCancelarCliente"
+                                class="btn-cancelar"
+                            >
+                                Cancelar
+                            </button>
+
+                            <button
+                                type="submit"
+                                id="btnGuardarCliente"
+                                class="btn-guardar"
+                            >
+                                Guardar cliente
+                            </button>
+
+                        </div>
+
+
+                    </form>
+
+                </div>
 
 
                 <!-- ENCABEZADO DE CLIENTES -->
@@ -312,103 +297,10 @@
 
                             <tbody id="tablaClientes">
 
-                                <tr>
-
-                                    <td>Juan Pérez</td>
-
-                                    <td>40.123.456</td>
-
-                                    <td>11-5555-1234</td>
-
-                                    <td>Av. Corrientes 1234</td>
-
-                                    <td>
-
-                                        <span class="estado activo">
-                                            Activo
-                                        </span>
-
-                                    </td>
-
-                                    <td>
-
-                                        <button class="btn-tabla">
-                                            Ver
-                                        </button>
-
-                                        <button class="btn-tabla">
-                                            Editar
-                                        </button>
-
-                                    </td>
-
-                                </tr>
-
-
-                                <tr>
-
-                                    <td>Carlos Gómez</td>
-
-                                    <td>38.654.321</td>
-
-                                    <td>11-4444-5678</td>
-
-                                    <td>Av. Rivadavia 2450</td>
-
-                                    <td>
-
-                                        <span class="estado activo">
-                                            Activo
-                                        </span>
-
-                                    </td>
-
-                                    <td>
-
-                                        <button class="btn-tabla">
-                                            Ver
-                                        </button>
-
-                                        <button class="btn-tabla">
-                                            Editar
-                                        </button>
-
-                                    </td>
-
-                                </tr>
-
-
-                                <tr>
-
-                                    <td>María López</td>
-
-                                    <td>42.987.654</td>
-
-                                    <td>11-3333-7890</td>
-
-                                    <td>Av. Santa Fe 850</td>
-
-                                    <td>
-
-                                        <span class="estado bloqueado">
-                                            Bloqueado
-                                        </span>
-
-                                    </td>
-
-                                    <td>
-
-                                        <button class="btn-tabla">
-                                            Ver
-                                        </button>
-
-                                        <button class="btn-tabla">
-                                            Editar
-                                        </button>
-
-                                    </td>
-
-                                </tr>
+                                <!--
+                                    Los clientes se cargarán
+                                    desde el backend.
+                                -->
 
                             </tbody>
 
@@ -428,14 +320,213 @@
     </div>
 
 
+    <!-- ================================= -->
+    <!-- MODAL VER CLIENTE -->
+    <!-- ================================= -->
+
+    <div
+        class="modal"
+        id="modalCliente"
+    >
+
+        <div class="modal-contenido">
+
+
+            <!-- HEADER DEL MODAL -->
+
+            <div class="modal-header">
+
+                <div>
+
+                    <h3>Datos del cliente</h3>
+
+                    <p>
+                        Información registrada
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="modal-cerrar"
+                    id="btnCerrarModal"
+                    type="button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- DATOS -->
+
+            <div class="datos-cliente">
+
+
+                <div class="dato">
+
+                    <span>Nombre</span>
+
+                    <strong id="verNombre">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="dato">
+
+                    <span>DNI</span>
+
+                    <strong id="verDni">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="dato">
+
+                    <span>Teléfono</span>
+
+                    <strong id="verTelefono">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="dato">
+
+                    <span>Dirección</span>
+
+                    <strong id="verDireccion">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="dato">
+
+                    <span>Estado</span>
+
+                    <strong id="verEstado">
+                        -
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- BOTON -->
+
+            <div class="modal-botones">
+
+                <button
+                    type="button"
+                    id="btnCerrarModalAbajo"
+                >
+                    Cerrar
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+<!-- MODAL DETALLE DEL CLIENTE -->
+
+<div id="modalCliente" class="modal">
+
+    <div class="modal-contenido">
+
+        <div class="modal-header">
+
+            <div>
+                <h3>Detalle del cliente</h3>
+                <p>Información completa del cliente</p>
+            </div>
+
+            <button
+                type="button"
+                id="btnCerrarModalCliente"
+                class="modal-cerrar">
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="detalle-grid">
+
+                <div class="detalle-item">
+                    <span>Nombre</span>
+                    <strong id="verNombre">-</strong>
+                </div>
+
+
+                <div class="detalle-item">
+                    <span>DNI</span>
+                    <strong id="verDni">-</strong>
+                </div>
+
+
+                <div class="detalle-item">
+                    <span>Teléfono</span>
+                    <strong id="verTelefono">-</strong>
+                </div>
+
+
+                <div class="detalle-item">
+                    <span>Dirección</span>
+                    <strong id="verDireccion">-</strong>
+                </div>
+
+
+                <div class="detalle-item">
+                    <span>Estado</span>
+                    <strong id="verEstado">-</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-footer">
+
+            <button
+                type="button"
+                id="btnEditarDesdeModal"
+                class="btn-secundario">
+                Editar
+            </button>
+
+            <button
+                type="button"
+                id="btnCerrarModalClienteFooter"
+                class="btn-secundario">
+                Cerrar
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
     <script src="../app.js"></script>
 
 </body>
 
 </html>
 
-    <script src="../app.js"></script>
-
-</body>
-
-</html>
