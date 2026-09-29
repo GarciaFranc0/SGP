@@ -1,0 +1,529 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Prestamos - Préstamos</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+
+<body>
+
+    <div class="app">
+
+
+        <!-- BARRA LATERAL -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <h1>PRESTAMOS</h1>
+
+                <p>
+                    Gestión financiera
+                </p>
+
+            </div>
+
+
+            <nav class="menu">
+
+                <a
+                    href="../index.html"
+                    class="menu-item"
+                >
+                    Dashboard
+                </a>
+
+
+                <a
+                    href="clientes.html"
+                    class="menu-item"
+                >
+                    Clientes
+                </a>
+
+
+                <a
+                    href="prestamos.html"
+                    class="menu-item activo"
+                >
+                    Préstamos
+                </a>
+
+
+                <a
+                    href="#"
+                    class="menu-item"
+                >
+                    Pagos
+                </a>
+
+
+                <a
+                    href="#"
+                    class="menu-item"
+                >
+                    Reportes
+                </a>
+
+
+                <a
+                    href="#"
+                    class="menu-item"
+                >
+                    Configuración
+                </a>
+
+            </nav>
+
+        </aside>
+
+
+
+        <!-- CONTENIDO PRINCIPAL -->
+
+        <main class="main">
+
+
+            <!-- HEADER -->
+
+            <header class="header">
+
+                <div>
+
+                    <h2>
+                        Préstamos
+                    </h2>
+
+                    <p>
+                        Administrá los préstamos de tus clientes
+                    </p>
+
+                </div>
+
+
+                <div class="usuario">
+
+                    <span>
+                        Prestamista
+                    </span>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- CONTENIDO -->
+
+            <section class="contenido">
+                
+<!-- FORMULARIO NUEVO PRÉSTAMO -->
+
+<div
+    class="formulario-container"
+    id="formularioPrestamo"
+>
+
+    <div class="formulario-header">
+
+        <div>
+
+            <h3>
+                Nuevo préstamo
+            </h3>
+
+            <p>
+                Completá los datos del préstamo
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <form id="formPrestamo">
+
+        <div class="form-grid">
+
+
+            <!-- CLIENTE -->
+
+            <div class="campo">
+
+                <label for="clientePrestamo">
+                    Cliente
+                </label>
+
+                <select
+                    id="clientePrestamo"
+                    required
+                >
+
+                    <option value="">
+                        Seleccioná un cliente
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- CAPITAL -->
+
+            <div class="campo">
+
+                <label for="montoCapital">
+                    Monto del capital
+                </label>
+
+                <input
+                    type="number"
+                    id="montoCapital"
+                    placeholder="Ej: 50000"
+                    min="1"
+                    required
+                >
+
+            </div>
+
+
+            <!-- RECARGO -->
+
+            <div class="campo">
+
+                <label for="porcentajeRecargo">
+                    Porcentaje de recargo
+                </label>
+
+                <input
+                    type="number"
+                    id="porcentajeRecargo"
+                    placeholder="Ej: 20"
+                    min="0"
+                    step="0.01"
+                    required
+                >
+
+            </div>
+
+
+            <!-- FRECUENCIA -->
+
+            <div class="campo">
+
+                <label for="frecuenciaPrestamo">
+                    Frecuencia de pago
+                </label>
+
+                <select
+                    id="frecuenciaPrestamo"
+                    required
+                >
+
+                    <option value="">
+                        Seleccioná una frecuencia
+                    </option>
+
+                    <option value="DIARIO">
+                        Diario
+                    </option>
+
+                    <option value="SEMANAL">
+                        Semanal
+                    </option>
+
+                    <option value="QUINCENAL">
+                        Quincenal
+                    </option>
+
+                    <option value="MENSUAL">
+                        Mensual
+                    </option>
+
+                </select>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="formulario-botones">
+
+            <button
+                type="button"
+                id="btnCancelarPrestamo"
+                class="btn-cancelar"
+            >
+                Cancelar
+            </button>
+
+
+            <button
+                type="submit"
+                id="btnGuardarPrestamo"
+                class="btn-guardar"
+            >
+                Guardar préstamo
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+
+
+                <!-- ENCABEZADO -->
+
+                <div class="pagina-header">
+
+                    <div>
+
+                        <h3>
+                            Lista de préstamos
+                        </h3>
+
+                        <p>
+                            Préstamos registrados en el sistema
+                        </p>
+
+                    </div>
+
+
+                    <button id="btnNuevoPrestamo">
+
+                        + Nuevo préstamo
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- BUSCADOR -->
+
+                <div class="buscador">
+
+                    <input
+                        type="text"
+                        id="buscarPrestamo"
+                        placeholder="Buscar por cliente..."
+                    >
+
+                </div>
+
+
+
+                <!-- TABLA -->
+
+                <div class="seccion">
+
+                    <div class="tabla-container">
+
+                        <table>
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Cliente
+                                    </th>
+
+                                    <th>
+                                        Capital
+                                    </th>
+
+                                    <th>
+                                        Recargo
+                                    </th>
+
+                                    <th>
+                                        Total
+                                    </th>
+
+                                    <th>
+                                        Frecuencia
+                                    </th>
+
+                                    <th>
+                                        Vencimiento
+                                    </th>
+
+                                    <th>
+                                        Estado
+                                    </th>
+
+                                    <th>
+                                        Acciones
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody id="tablaPrestamos">
+
+                                <tr>
+
+                                    <td colspan="8">
+                                        Cargando información...
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+        </main>
+
+    </div>
+
+<!-- MODAL DETALLE DEL PRÉSTAMO -->
+
+<div id="modalPrestamo" class="modal">
+
+    <div class="modal-contenido">
+
+        <div class="modal-header">
+
+            <div>
+                <h3>Detalle del préstamo</h3>
+
+                <p>
+                    Información completa del préstamo
+                </p>
+            </div>
+
+            <button
+                type="button"
+                id="btnCerrarModalPrestamo"
+                class="modal-cerrar"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="modal-body">
+
+            <div class="detalle-grid">
+
+                <div class="detalle-item">
+                    <span>Cliente</span>
+                    <strong id="detalleCliente">-</strong>
+                </div>
+
+                <div class="detalle-item">
+                    <span>Capital</span>
+                    <strong id="detalleCapital">-</strong>
+                </div>
+
+                <div class="detalle-item">
+                    <span>Recargo</span>
+                    <strong id="detalleRecargo">-</strong>
+                </div>
+
+                <div class="detalle-item">
+                    <span>Total</span>
+                    <strong id="detalleTotal">-</strong>
+                </div>
+
+                <div class="detalle-item">
+                    <span>Frecuencia</span>
+                    <strong id="detalleFrecuencia">-</strong>
+                </div>
+
+                <div class="detalle-item">
+                    <span>Fecha de inicio</span>
+                    <strong id="detalleFechaInicio">-</strong>
+                </div>
+
+                <div class="detalle-item">
+                    <span>Fecha de vencimiento</span>
+                    <strong id="detalleFechaVencimiento">-</strong>
+                </div>
+
+                <div class="detalle-item">
+                    <span>Renovaciones</span>
+                    <strong id="detalleRenovaciones">-</strong>
+                </div>
+
+                <div class="detalle-item">
+                    <span>Estado</span>
+                    <strong id="detalleEstado">-</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        
+<div class="modal-footer">
+
+    <button
+        type="button"
+        id="btnRenovarPrestamo"
+        class="btn-secundario">
+        Renovar préstamo
+    </button>
+
+    <button
+        type="button"
+        id="btnCancelarPrestamoTotal"
+        class="btn-secundario">
+        Cancelar préstamo
+    </button>
+
+    <button
+        type="button"
+        id="btnCerrarModalPrestamoFooter"
+        class="btn-secundario">
+        Cerrar
+    </button>
+
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+
+
+    <script src="../app.js"></script>
+
+</body>
+
+</html>
+```
